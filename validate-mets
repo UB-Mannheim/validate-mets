@@ -29,7 +29,7 @@ while true; do
   # Nur dann sind die weiteren Prüfungen sinnvoll.
   # xmllint --noout --schema http://www.loc.gov/standards/mets/mets.xsd $metsfile
   # Der Katalog stellt das von mets.xsd referenzierte XLink-Schema lokal bereit.
-  XML_CATALOG_FILES="$BASE/catalog.xml" xmllint --noout --schema $BASE/mets.xsd $metsfile || continue
+  XML_CATALOG_FILES="$BASE/catalog.xml" xmllint --quiet --noout --schema $BASE/mets.xsd $metsfile || continue
 
   if grep -q 'mods:detail.*type=.issue' $metsfile ; then
     # Zeitungen
